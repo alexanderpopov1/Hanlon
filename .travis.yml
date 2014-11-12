@@ -19,6 +19,7 @@ services:
   - mongodb
 
 before_script:
+  - mkdir image
   - sleep 15
 
 script:
