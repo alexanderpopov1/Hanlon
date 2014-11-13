@@ -29,7 +29,7 @@ script:
   - sed -i "s/127.0.0.1/$MONGO_PORT_27017_TCP_ADDR/g" web/config/hanlon_server.conf
   - ./web/run-puma.sh 2>&1 > /dev/null &
   - sleep 15
-  - curl http://192.168.42.103:8026/hanlon/api/v1/node
+  - curl http://localhost:8026/hanlon/api/v1/node
   - sleep 15
   - cd test
   - rspec
