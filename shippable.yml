@@ -27,6 +27,7 @@ services:
 script:
   - ./hanlon_init
   - sed -i "s/127.0.0.1/$MONGO_PORT_27017_TCP_ADDR/g" web/config/hanlon_server.conf
+  - cat web/config/hanlon_server.conf
   - ./web/run-puma.sh 2>&1 > /dev/null &
   - sleep 15
   - curl http://localhost:8026/hanlon/api/v1/node
